@@ -289,14 +289,14 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.preferences.PreferencesActivity" destination="dev.ukanth.ufirewall.activity.ProfileActivity" method="">
-    <comment>PreferencesActivity.onBuildHeaders() -&gt; loadHeadersFromResource(R.xml.preferences_headers) -&gt; R.xml.preferences_headers.MultiProfilePreferenceFragment -&gt; MultiProfilePreferenceFragment.onCreate() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; startActivity()</comment>
+    <comment>PreferencesActivity.onBuildHeaders() -&gt; loadHeadersFromResource() -&gt; R.xml.preferences_headers.header -&gt; MultiProfilePreferenceFragment.onCreate() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; startActivity()</comment>
     <callLines>
       <line src="/aFWall/src/main/java/dev/ukanth/ufirewall/preferences/PreferencesActivity.java" start="242" end="242"/>
       <line src="/aFWall/src/main/res/xml/preferences_headers.xml" start="25" end="28"/>
       <line src="/aFWall/src/main/java/dev/ukanth/ufirewall/preferences/MultiProfilePreferenceFragment.java" start="29" end="33"/>
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false"/>
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="true"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
@@ -331,7 +331,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.preferences.PreferencesActivity" destination="haibison.android.lockpattern.LockPatternActivity" method="">
-    <comment>PreferencesActivity.onBuildHeaders() -&gt; loadHeadersFromResource(R.xml.preferences_headers) -&gt; R.xml.preferences_headers.SecPreferenceFragment -&gt; *SecPreferenceFragment.onSharedPreferenceChanged() -&gt; showPatternActivity() -&gt; startActivityForResult()</comment>
+    <comment>PreferencesActivity.onBuildHeaders() -&gt; loadHeadersFromResource() -&gt; R.xml.preferences_headers.header -&gt; *SecPreferenceFragment.onSharedPreferenceChanged() -&gt; showPatternActivity() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/aFWall/src/main/java/dev/ukanth/ufirewall/preferences/PreferencesActivity.java" start="242" end="242"/>
       <line src="/aFWall/src/main/res/xml/preferences_headers.xml" start="17" end="20"/>
@@ -339,7 +339,7 @@
       <line src="/aFWall/src/main/java/dev/ukanth/ufirewall/preferences/SecPreferenceFragment.java" start="244" end="245"/>
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
+      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="true"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
@@ -452,7 +452,7 @@
       <line src="/aFWall/src/main/java/dev/ukanth/ufirewall/Api.java" start="2031" end="2034"/>
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false"/>
+      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
@@ -476,7 +476,7 @@
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
         <componentScope isActivity="false" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="true"/>
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
