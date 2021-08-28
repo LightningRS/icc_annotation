@@ -194,7 +194,7 @@
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/HomePagerActivity.java" start="643" end="643"/>
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false"/>
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
@@ -220,7 +220,7 @@
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/HomePagerActivity.java" start="643" end="643"/>
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false"/>
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
@@ -643,7 +643,7 @@
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/scheduling/AlarmReceiver.kt" start="52" end="54"/>
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="false" isAtypicalSendICC="true"/>
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
@@ -687,7 +687,7 @@
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/settings/privacy/PrivacyPrefsFragment.kt" start="104" end="106"/>
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false"/>
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="true"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>

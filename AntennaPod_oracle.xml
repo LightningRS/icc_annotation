@@ -2,9 +2,11 @@
 
 <root srcCodeBase="/AntennaPod/AntennaPod-1.7.1">
   <OracleEdge source="de.danoeh.antennapod.activity.AudioplayerActivity" destination="de.danoeh.antennapod.activity.CastplayerActivity" method="">
-    <comment>MediaplayerActivity.onResume() -&gt; PlaybackController.init() -&gt; initServiceRunning() -&gt; Activity.registerReceiver() -&gt; *BroadcastReceiver.onReceive() -&gt; PlaybackController.onReloadNotification() -&gt; AudioplayerActivity.onReloadNotification() -&gt; startActivity()</comment>
+    <comment>AudioplayerActivity.onResume() -&gt; AudioplayerActivity extends MediaplayerInfoActivity -&gt; MediaplayerInfoActivity.onResume() -&gt; MediaplayerInfoActivity extends MediaplayerActivity -&gt; MediaplayerActivity.onResume() -&gt; PlaybackController.init() -&gt; initServiceRunning() -&gt; Activity.registerReceiver() -&gt; *BroadcastReceiver.onReceive() -&gt; PlaybackController.onReloadNotification() -&gt; AudioplayerActivity.onReloadNotification() -&gt; startActivity()</comment>
     <callLines>
+      <line src="/app/src/main/java/de/danoeh/antennapod/activity/AudioplayerActivity.java" start="27" end="27"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/AudioplayerActivity.java" start="20" end="20"/>
+      <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerInfoActivity.java" start="184" end="184"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerInfoActivity.java" start="74" end="74"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerActivity.java" start="631" end="631"/>
       <line src="/core/src/main/java/de/danoeh/antennapod/core/util/playback/PlaybackController.java" start="99" end="99"/>
@@ -27,9 +29,10 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.AudioplayerActivity" destination="de.danoeh.antennapod.activity.FlattrAuthActivity" method="">
-    <comment>MediaplayerActivity.onOptionsItemSelected() -&gt; DBTasks.flattrItemIfLoggedIn() -&gt; FlattrUtils.showNoTokenDialogOrRedirect() -&gt; *AlertDialog.setPositiveButton() -&gt; FlattrCallbacksImpl.getFlattrAuthenticationActivityIntent() -&gt; startActivity()</comment>
+    <comment>AudioplayerActivity extends MediaplayerInfoActivity -&gt; MediaplayerInfoActivity.onOptionsItemSelected() -&gt; MediaplayerInfoActivity extends MediaplayerActivity -&gt; MediaplayerActivity.onOptionsItemSelected() -&gt; DBTasks.flattrItemIfLoggedIn() -&gt; FlattrUtils.showNoTokenDialogOrRedirect() -&gt; *AlertDialog.setPositiveButton() -&gt; FlattrCallbacksImpl.getFlattrAuthenticationActivityIntent() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/AudioplayerActivity.java" start="20" end="20"/>
+      <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerInfoActivity.java" start="360" end="360"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerInfoActivity.java" start="74" end="74"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerActivity.java" start="576" end="576"/>
       <line src="/core/src/main/java/de/danoeh/antennapod/core/storage/DBTasks.java" start="810" end="810"/>
@@ -50,9 +53,11 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.AudioplayerActivity" destination="de.danoeh.antennapod.activity.StorageErrorActivity" method="">
-    <comment>*MediaplayerActivity.onCreate() -&gt; StorageUtils.checkStorageAvailability() -&gt; ApplicationCallbacksImpl.getStorageErrorActivity() -&gt; Activity.startActivity()</comment>
+    <comment>AudioplayerActivity extends MediaplayerInfoActivity -&gt; MediaplayerInfoActivity.onCreate() -&gt; MediaplayerInfoActivity extends MediaplayerActivity -&gt; *MediaplayerActivity.onCreate() -&gt; StorageUtils.checkStorageAvailability() -&gt; ApplicationCallbacksImpl.getStorageErrorActivity() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/AudioplayerActivity.java" start="20" end="20"/>
+      <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerInfoActivity.java" start="119" end="119"/>
+      <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerInfoActivity.java" start="74" end="74"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerActivity.java" start="232" end="232"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/config/ApplicationCallbacksImpl.java" start="21" end="21"/>
       <line src="/core/src/main/java/de/danoeh/antennapod/core/util/StorageUtils.java" start="44" end="44"/>
@@ -64,16 +69,17 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.AudioplayerActivity" destination="de.danoeh.antennapod.core.service.playback.PlaybackService" method="">
-    <comment>*AudioplayerActivity.onResume() -&gt; MediaplayerActivity.playExternalMedia() -&gt; PlaybackServiceStarter.start() -&gt; getIntent() -&gt; ContextCompat.startForegroundService()</comment>
+    <comment>*AudioplayerActivity.onResume() -&gt; AudioplayerActivity extends MediaplayerInfoActivity -&gt; MediaplayerInfoActivity extends MediaplayerActivity -&gt; MediaplayerActivity.playExternalMedia() -&gt; PlaybackServiceStarter.start() -&gt; getIntent() -&gt; ContextCompat.startForegroundService()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/AudioplayerActivity.java" start="29" end="29"/>
+      <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerInfoActivity.java" start="74" end="74"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerActivity.java" start="981" end="985"/>
       <line src="/core/src/main/java/de/danoeh/antennapod/core/util/playback/PlaybackServiceStarter.java" start="63" end="69"/>
       <line src="/core/src/main/java/de/danoeh/antennapod/core/util/playback/PlaybackServiceStarter.java" start="76" end="76"/>
@@ -85,14 +91,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.CastplayerActivity" destination="de.danoeh.antennapod.activity.AudioplayerActivity" method="">
-    <comment>MediaplayerActivity.onResume() -&gt; PlaybackController.init() -&gt; initServiceRunning() -&gt; Activity.registerReceiver() -&gt; *BroadcastReceiver.onReceive() -&gt; PlaybackController.onReloadNotification() -&gt; CastplayerActivity.onReloadNotification() -&gt; startActivity()</comment>
+    <comment>CastplayerActivity extends MediaplayerInfoActivity -&gt; MediaplayerInfoActivity extends MediaplayerActivity -&gt; MediaplayerActivity.onResume() -&gt; PlaybackController.init() -&gt; initServiceRunning() -&gt; Activity.registerReceiver() -&gt; *BroadcastReceiver.onReceive() -&gt; PlaybackController.onReloadNotification() -&gt; CastplayerActivity.onReloadNotification() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/CastplayerActivity.java" start="15" end="15"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerInfoActivity.java" start="74" end="74"/>
@@ -117,7 +123,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.CastplayerActivity" destination="de.danoeh.antennapod.activity.FlattrAuthActivity" method="">
-    <comment>MediaplayerActivity.onOptionsItemSelected() -&gt; DBTasks.flattrItemIfLoggedIn() -&gt; FlattrUtils.showNoTokenDialogOrRedirect() -&gt; *AlertDialog.setPositiveButton() -&gt; FlattrCallbacksImpl.getFlattrAuthenticationActivityIntent() -&gt; startActivity()</comment>
+    <comment>CastplayerActivity extends MediaplayerInfoActivity -&gt; MediaplayerInfoActivity extends MediaplayerActivity -&gt; MediaplayerActivity.onOptionsItemSelected() -&gt; DBTasks.flattrItemIfLoggedIn() -&gt; FlattrUtils.showNoTokenDialogOrRedirect() -&gt; *AlertDialog.setPositiveButton() -&gt; FlattrCallbacksImpl.getFlattrAuthenticationActivityIntent() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/CastplayerActivity.java" start="15" end="15"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerInfoActivity.java" start="74" end="74"/>
@@ -147,7 +153,7 @@
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
-      <exitMethod isNormalSendICC="false" isAtypicalSendICC="true"/>
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
@@ -519,7 +525,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.PreferenceActivity" destination="de.danoeh.antennapod.core.service.FeedUpdateJobService" method="">
-    <comment>PreferenceActivity.onCreate() -&gt; showPreferenceScreen() -&gt; FragmentTransaction.replace() -&gt; PreferenceActivity.MainFragment.onCreatePreferences() -&gt; PreferenceController.onCreate() -&gt; setupNetworkScreen() -&gt; Preference.setOnPreferenceClickListener() -&gt; PreferenceController.showUpdateIntervalTimePreferencesDialog() -&gt; *MaterialDialog.Builder.onNeutral() -&gt; UserPreferences.setUpdateInterval() -&gt; restartUpdateAlarm() -&gt; AutoUpdateManager.restartUpdateIntervalAlarm() -&gt; restartJobServiceInterval() -&gt; getFeedUpdateJobBuilder() -&gt; JobInfo.Builder.Builder() -&gt; build()</comment>
+    <comment>PreferenceActivity.onCreate() -&gt; showPreferenceScreen() -&gt; FragmentTransaction.commit() -&gt; PreferenceActivity.MainFragment.onCreatePreferences() -&gt; PreferenceController.onCreate() -&gt; setupNetworkScreen() -&gt; Preference.setOnPreferenceClickListener() -&gt; PreferenceController.showUpdateIntervalTimePreferencesDialog() -&gt; *MaterialDialog.Builder.onNeutral() -&gt; UserPreferences.setUpdateInterval() -&gt; restartUpdateAlarm() -&gt; AutoUpdateManager.restartUpdateIntervalAlarm() -&gt; restartJobServiceInterval() -&gt; getFeedUpdateJobBuilder() -&gt; JobInfo.Builder.Builder() -&gt; build()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/PreferenceActivity.java" start="87" end="87"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/PreferenceActivity.java" start="97" end="98"/>
@@ -542,7 +548,7 @@
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
+        <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true"/>
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
@@ -606,7 +612,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.VideoplayerActivity" destination="de.danoeh.antennapod.activity.AudioplayerActivity" method="">
-    <comment>MediaplayerActivity.onResume() -&gt; PlaybackController.init() -&gt; initServiceRunning() -&gt; Activity.registerReceiver() -&gt; *BroadcastReceiver.onReceive() -&gt; PlaybackController.onReloadNotification() -&gt; VideoplayerActivity.onReloadNotification() -&gt; startActivity()</comment>
+    <comment>VideoplayerActivity extends MediaplayerInfoActivity -&gt; MediaplayerInfoActivity extends MediaplayerActivity -&gt; MediaplayerActivity.onResume() -&gt; PlaybackController.init() -&gt; initServiceRunning() -&gt; Activity.registerReceiver() -&gt; *BroadcastReceiver.onReceive() -&gt; PlaybackController.onReloadNotification() -&gt; VideoplayerActivity.onReloadNotification() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/VideoplayerActivity.java" start="42" end="42"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerInfoActivity.java" start="74" end="74"/>
@@ -631,7 +637,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.VideoplayerActivity" destination="de.danoeh.antennapod.activity.CastplayerActivity" method="">
-    <comment>MediaplayerActivity.onResume() -&gt; PlaybackController.init() -&gt; initServiceRunning() -&gt; Activity.registerReceiver() -&gt; *BroadcastReceiver.onReceive() -&gt; PlaybackController.onReloadNotification() -&gt; VideoplayerActivity.onReloadNotification() -&gt; startActivity()</comment>
+    <comment>VideoplayerActivity extends MediaplayerInfoActivity -&gt; MediaplayerInfoActivity extends MediaplayerActivity -&gt; MediaplayerActivity.onResume() -&gt; PlaybackController.init() -&gt; initServiceRunning() -&gt; Activity.registerReceiver() -&gt; *BroadcastReceiver.onReceive() -&gt; PlaybackController.onReloadNotification() -&gt; VideoplayerActivity.onReloadNotification() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/VideoplayerActivity.java" start="42" end="42"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerInfoActivity.java" start="74" end="74"/>
@@ -656,7 +662,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.VideoplayerActivity" destination="de.danoeh.antennapod.activity.FlattrAuthActivity" method="">
-    <comment>MediaplayerActivity.onOptionsItemSelected() -&gt; DBTasks.flattrItemIfLoggedIn() -&gt; FlattrUtils.showNoTokenDialogOrRedirect() -&gt; *AlertDialog.setPositiveButton() -&gt; FlattrCallbacksImpl.getFlattrAuthenticationActivityIntent() -&gt; startActivity()</comment>
+    <comment>VideoplayerActivity extends MediaplayerInfoActivity -&gt; MediaplayerInfoActivity extends MediaplayerActivity -&gt; MediaplayerActivity.onOptionsItemSelected() -&gt; DBTasks.flattrItemIfLoggedIn() -&gt; FlattrUtils.showNoTokenDialogOrRedirect() -&gt; *AlertDialog.setPositiveButton() -&gt; FlattrCallbacksImpl.getFlattrAuthenticationActivityIntent() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/VideoplayerActivity.java" start="42" end="42"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MediaplayerActivity.java" start="576" end="576"/>
@@ -751,7 +757,7 @@
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false"/>
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
+      <exitMethod isNormalSendICC="false" isAtypicalSendICC="true"/>
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
@@ -797,7 +803,7 @@
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
+      <exitMethod isNormalSendICC="false" isAtypicalSendICC="true"/>
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
@@ -836,7 +842,7 @@
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false"/>
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
+      <exitMethod isNormalSendICC="false" isAtypicalSendICC="true"/>
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
