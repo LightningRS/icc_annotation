@@ -33,45 +33,6 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="com.integreight.onesheeld.services.OneSheeldService" destination="com.integreight.onesheeld.MainActivity" method="">
-    <comment>*OneSheeldConnectionCallback.onStartCommand() -&gt; OneSheeldService.showNotification() -&gt; OneSheeldService.startForeground()</comment>
-    <callLines>
-      <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/services/OneSheeldService.java" start="64" end="64"/>
-      <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/services/OneSheeldService.java" start="73" end="73"/>
-      <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/services/OneSheeldService.java" start="109" end="109"/>
-      <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/services/OneSheeldService.java" start="116" end="116"/>
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
-      <exitMethod isNormalSendICC="false" isAtypicalSendICC="true"/>
-      <intentMatch isExplicit="true" isImplicit="false"/>
-      <analyzeScope>
-        <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
-        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
-        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="com.integreight.onesheeld.shields.controller.utils.NfcUtils" destination="com.integreight.onesheeld.MainActivity" method="">
-    <comment>*NfcUtils.onCreate() -&gt; startActivity()</comment>
-    <callLines>
-      <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/shields/controller/utils/NfcUtils.java" start="40" end="40"/>
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
-      <intentMatch isExplicit="true" isImplicit="false"/>
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
-        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
-        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
   <OracleEdge source="com.integreight.onesheeld.MainActivity" destination="com.integreight.onesheeld.Tutorial" method="">
     <comment>*MainActivity.onCreate() -&gt; startActivity()</comment>
     <callLines>
@@ -144,6 +105,45 @@
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="com.integreight.onesheeld.services.OneSheeldService" destination="com.integreight.onesheeld.MainActivity" method="">
+    <comment>*OneSheeldConnectionCallback.onStartCommand() -&gt; OneSheeldService.showNotification() -&gt; OneSheeldService.startForeground()</comment>
+    <callLines>
+      <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/services/OneSheeldService.java" start="64" end="64"/>
+      <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/services/OneSheeldService.java" start="73" end="73"/>
+      <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/services/OneSheeldService.java" start="109" end="109"/>
+      <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/services/OneSheeldService.java" start="116" end="116"/>
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
+      <exitMethod isNormalSendICC="false" isAtypicalSendICC="true"/>
+      <intentMatch isExplicit="true" isImplicit="false"/>
+      <analyzeScope>
+        <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
+        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="com.integreight.onesheeld.shields.controller.utils.NfcUtils" destination="com.integreight.onesheeld.MainActivity" method="">
+    <comment>*NfcUtils.onCreate() -&gt; startActivity()</comment>
+    <callLines>
+      <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/shields/controller/utils/NfcUtils.java" start="40" end="40"/>
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
+      <intentMatch isExplicit="true" isImplicit="false"/>
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
+        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>

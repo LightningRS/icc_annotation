@@ -272,6 +272,63 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
+  <OracleEdge source="com.farmerbb.taskbar.activity.ContextMenuActivity" destination="com.farmerbb.taskbar.service.StartMenuService" method="">
+    <comment>*ContextMenuActivity.onPause() -&gt; finish() -&gt;StartMenuService.onCreate() -&gt; drawStartMenu() -&gt; LocalBroadcastManager.registerReceiver() -&gt; </comment>
+    <callLines>
+      <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="431" end="431"/>
+      <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ContextMenuActivity.java" start="668" end="668"/>
+      <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ContextMenuActivity.java" start="678" end="678"/>
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false"/>
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
+      <intentMatch isExplicit="false" isImplicit="true"/>
+      <analyzeScope>
+        <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="true"/>
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
+        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="com.farmerbb.taskbar.activity.ImportSettingsActivity" destination="com.farmerbb.taskbar.activity.MainActivity" method="">
+    <comment>ImportSettingsActivity.onReceive() </comment>
+    <callLines>
+      <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ImportSettingsActivity.java" start="38" end="40"/>
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
+      <intentMatch isExplicit="true" isImplicit="false"/>
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
+        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="com.farmerbb.taskbar.activity.ImportSettingsActivity" destination="com.farmerbb.taskbar.receiver.SendSettingsReceiver" method="">
+    <comment>ImportSettingsActivity.onCreate() </comment>
+    <callLines>
+      <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ImportSettingsActivity.java" start="56" end="58"/>
+      <line src="/app/src/playstore/AndroidManifest.xml" start="329" end="337"/>
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
+      <intentMatch isExplicit="false" isImplicit="true"/>
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
+        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.activity.InvisibleActivityFreeform" destination="com.farmerbb.taskbar.activity.DummyActivity" method="">
     <comment>*InvisibleActivityFreeform.onStart() -&gt; Handler.postDelayed() -&gt; startActivity()</comment>
     <callLines>
@@ -434,6 +491,45 @@
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="true" isImplicit="false"/>
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
+        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="com.farmerbb.taskbar.receiver.ReceiveSettingsReceiver" destination="com.farmerbb.taskbar.activity.ImportSettingsActivity" method="">
+    <comment>ImportSettingsActivity.onCreate() -&gt; SendSettingsReceiver.onReceive() </comment>
+    <callLines>
+      <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ImportSettingsActivity.java" start="53" end="53"/>
+      <line src="/app/src/playstore/java/com/farmerbb/taskbar/receiver/ReceiveSettingsReceiver.java" start="159" end="159"/>
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
+      <intentMatch isExplicit="false" isImplicit="true"/>
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="true"/>
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
+        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="com.farmerbb.taskbar.receiver.SendSettingsReceiver" destination="com.farmerbb.taskbar.receiver.ReceiveSettingsReceiver" method="">
+    <comment>SendSettingsReceiver.onReceive() </comment>
+    <callLines>
+      <line src="/app/src/playstore/java/com/farmerbb/taskbar/receiver/SendSettingsReceiver.java" start="44" end="44"/>
+      <line src="/app/src/playstore/java/com/farmerbb/taskbar/receiver/SendSettingsReceiver.java" start="159" end="159"/>
+      <line src="/app/src/playstore/AndroidManifest.xml" start="338" end="346"/>
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
+      <intentMatch isExplicit="false" isImplicit="true"/>
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
@@ -636,102 +732,6 @@
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
-        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="com.farmerbb.taskbar.activity.ImportSettingsActivity" destination="com.farmerbb.taskbar.receiver.SendSettingsReceiver" method="">
-    <comment>ImportSettingsActivity.onCreate() </comment>
-    <callLines>
-      <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ImportSettingsActivity.java" start="56" end="58"/>
-      <line src="/app/src/playstore/AndroidManifest.xml" start="329" end="337"/>
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
-      <intentMatch isExplicit="false" isImplicit="true"/>
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
-        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
-        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="com.farmerbb.taskbar.receiver.SendSettingsReceiver" destination="com.farmerbb.taskbar.receiver.ReceiveSettingsReceiver" method="">
-    <comment>SendSettingsReceiver.onReceive() </comment>
-    <callLines>
-      <line src="/app/src/playstore/java/com/farmerbb/taskbar/receiver/SendSettingsReceiver.java" start="44" end="44"/>
-      <line src="/app/src/playstore/java/com/farmerbb/taskbar/receiver/SendSettingsReceiver.java" start="159" end="159"/>
-      <line src="/app/src/playstore/AndroidManifest.xml" start="338" end="346"/>
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
-      <intentMatch isExplicit="false" isImplicit="true"/>
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
-        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
-        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="com.farmerbb.taskbar.receiver.ReceiveSettingsReceiver" destination="com.farmerbb.taskbar.activity.ImportSettingsActivity" method="">
-    <comment>ImportSettingsActivity.onCreate() -&gt; SendSettingsReceiver.onReceive() </comment>
-    <callLines>
-      <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ImportSettingsActivity.java" start="53" end="53"/>
-      <line src="/app/src/playstore/java/com/farmerbb/taskbar/receiver/ReceiveSettingsReceiver.java" start="159" end="159"/>
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
-      <intentMatch isExplicit="false" isImplicit="true"/>
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="true"/>
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
-        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
-        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="com.farmerbb.taskbar.activity.ImportSettingsActivity" destination="com.farmerbb.taskbar.activity.MainActivity" method="">
-    <comment>ImportSettingsActivity.onReceive() </comment>
-    <callLines>
-      <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ImportSettingsActivity.java" start="38" end="40"/>
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
-      <intentMatch isExplicit="true" isImplicit="false"/>
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
-        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
-        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="com.farmerbb.taskbar.activity.ContextMenuActivity" destination="com.farmerbb.taskbar.service.StartMenuService" method="">
-    <comment>*ContextMenuActivity.onPause() -&gt; finish() -&gt;StartMenuService.onCreate() -&gt; drawStartMenu() -&gt; LocalBroadcastManager.registerReceiver() -&gt; </comment>
-    <callLines>
-      <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="431" end="431"/>
-      <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ContextMenuActivity.java" start="668" end="668"/>
-      <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ContextMenuActivity.java" start="678" end="678"/>
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false"/>
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
-      <intentMatch isExplicit="false" isImplicit="true"/>
-      <analyzeScope>
-        <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="true"/>
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
-        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
